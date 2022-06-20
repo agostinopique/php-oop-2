@@ -70,7 +70,7 @@ $clienti[] = $cliente4;
 
             <?php if($cliente->getRegistration() != null){?>
                 <p>Data di registrazione: <?php echo $cliente->getRegistration() ?></p>
-                <p>Sconto applicato al carrello: <?php ?></p>
+                <p>Sconto applicato al carrello: <?php echo $cliente->getDiscount() ?> &percnt;</p>
             <?php } else {?>
                 <p>Cliente Guest</p>
             <?php } ?>

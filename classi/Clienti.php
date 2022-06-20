@@ -12,7 +12,7 @@ class Client{
         $this->name = $_name;
         $this->surname = $_surname;
         $this->registration = $_registration;
-        // $this->discount = getDiscount();
+        $this->discount = $this->setDiscount();
         self::$id++;
     }
 
@@ -27,6 +27,12 @@ class Client{
         $this->getFullName();
     }
 
+    private function setDiscount(){
+        if($this->registration != null){
+            return $this->discount = 20;
+        } 
+    }
+
     // GETTER
     public function getFullName(){
         return $this->name . ' ' . $this->surname;
@@ -34,6 +40,10 @@ class Client{
 
     public function getRegistration(){
         return $this->registration;
+    }
+
+    public function getDiscount(){
+        return $this->discount;
     }
 
 }
