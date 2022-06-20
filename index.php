@@ -42,6 +42,14 @@ class productDetail extends Product{
     }
     // /GETTER
 
+    public function gatherData(){
+        $dataArr = [];
+
+        $dataArr[] = $this->category;
+        $dataArr[] = $this->animalType;
+
+        return $dataArr;
+    }
 
 }
 
@@ -67,6 +75,11 @@ $petShopProducts[] = $catFood;
     <div>
         <h2><?php echo $product->getName() ?></h2>
         <p><?php echo $product->getPrice() ?> &euro;</p>
+        <ul>
+            <?php ?>
+            <li></li>
+            <?php ?>
+        </ul>
     </div>
     <?php endforeach; ?>
 </body>
