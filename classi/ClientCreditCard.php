@@ -28,5 +28,21 @@ class CreditCard extends Client{
         }
     }
 
+    // GETTER
+    public function getName(){
+        return $this->name;
+    }
+
+
+    public function getCardData(){
+        $cardInfo = [];
+
+        $cardInfo["Numero carta"] = $this->cardNumber;
+        $cardInfo["Data di scadenza"] = $this->cardExpiration;
+        $cardInfo["Stato carta"] = $this->cardValidation;
+
+        return $cardInfo;
+    }
+
 
 }

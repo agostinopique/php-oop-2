@@ -14,9 +14,21 @@ $petShopProducts[] = $catGame;
 $petShopProducts[] = $catFood;
 $petShopProducts[] = $dogCrate;
 
-$cliente = new CreditCard("franco", "franchetto", "10/05/2019", 132121356565, "30/06/2022");
 
-var_dump($cliente);
+$clienti = [];
+
+$cliente1 = new CreditCard("Cosimo", "Rucellai", "10/05/2019", 132121356565, "30/06/2022");
+$cliente2 = new CreditCard("Ugo", "Foscolo", "", 31518451545, "23/06/2025");
+$cliente3 = new CreditCard("Giacomo", "Leopardi", "10/05/2019", 64121598651, "16/10/2020");
+$cliente4 = new CreditCard("Giovanni", "delle Bande Nere", "10/05/2019", 79541325549135, "30/06/2040");
+
+
+$clienti[] = $cliente1;
+$clienti[] = $cliente2;
+$clienti[] = $cliente3;
+$clienti[] = $cliente4;
+
+// var_dump($clienti);
 
 
 
@@ -44,6 +56,29 @@ var_dump($cliente);
                 <li><?php echo "$key : $data" ?></li>
                 <?php endforeach; ?>
             </ul>
+        </div>
+        <?php endforeach; ?>
+
+    </div>
+
+    <div class="d-flex justify-center prodotti">
+
+        <?php foreach($clienti as $cliente): ?>
+        <div>
+
+            <h2><?php echo $cliente->getFullName() ?></h2>
+
+            <?php if($cliente->getRegistration() != null){?>
+                <p>Data di registrazione: <?php echo $cliente->getRegistration() ?></p>
+                <p>Sconto applicato al carrello: <?php ?></p>
+            <?php } else {?>
+                <p>Cliente Guest</p>
+            <?php } ?>
+                <ul class="dati_carte">
+                    <?php foreach($cliente->getCardData() as $key => $data): ?>
+                    <li><?php echo "$key : $data" ?></li>
+                    <?php endforeach; ?>
+                </ul>
         </div>
         <?php endforeach; ?>
 

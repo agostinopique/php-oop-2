@@ -5,12 +5,14 @@ class Client{
     protected $name;
     protected $surname;
     protected $registration;
+    private $discount;
 
 
     public function __construct($_name, $_surname, $_registration){
         $this->name = $_name;
         $this->surname = $_surname;
         $this->registration = $_registration;
+        // $this->discount = getDiscount();
         self::$id++;
     }
 
@@ -29,4 +31,9 @@ class Client{
     public function getFullName(){
         return $this->name . ' ' . $this->surname;
     }
+
+    public function getRegistration(){
+        return $this->registration;
+    }
+
 }
